@@ -28,6 +28,6 @@ Route::get('/contacto', function () {
 
 Route::get('/',[\App\Http\Controllers\PrincipalController::class, 'principal']);
 
-
+Route::get('/sobre',[\App\Http\Controllers\SobreNosController::class, 'sobreNos']);
 
 Route::get('/contacto',[\App\Http\Controllers\ContactoController::class, 'contacto']);
