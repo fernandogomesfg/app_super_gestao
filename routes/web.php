@@ -16,9 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return 'Ola Mundo';
 });
-*/
-
-Route::get('/',[\App\Http\Controllers\PrincipalController::class, 'principal']);
 
 Route::get('/sobre-nos', function () {
     return 'Sobre Nos';
@@ -27,3 +24,10 @@ Route::get('/sobre-nos', function () {
 Route::get('/contacto', function () {
     return 'Contacto';
 });
+*/
+
+Route::get('/',[\App\Http\Controllers\PrincipalController::class, 'principal']);
+
+
+
+Route::get('/contacto',[\App\Http\Controllers\ContactoController::class, 'contacto']);
