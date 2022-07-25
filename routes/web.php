@@ -33,6 +33,6 @@ Route::get('/sobre',[\App\Http\Controllers\SobreNosController::class, 'sobreNos'
 Route::get('/contacto',[\App\Http\Controllers\ContactoController::class, 'contacto']);
 
 //envio de parametros nas rotas
-Route::get('contacto/{nome}/{categoria}/{assunto}/{mensagem}', function(string $nome, string $categoria, string $assunto, string $mensagem){
+Route::get('contacto/{nome}/{categoria}/{assunto}/{mensagem?}', function(string $nome, string $categoria, string $assunto, string $mensagem = 'Mensagem nao informada'){
     echo "Estamos aqui: $nome - $categoria - $assunto - $mensagem";
 });
