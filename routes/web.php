@@ -33,6 +33,18 @@ Route::get('/sobre',[\App\Http\Controllers\SobreNosController::class, 'sobreNos'
 Route::get('/contacto',[\App\Http\Controllers\ContactoController::class, 'contacto']);
 
 //envio de parametros nas rotas
+/*
 Route::get('contacto/{nome}/{categoria}/{assunto}/{mensagem?}', function(string $nome, string $categoria, string $assunto, string $mensagem = 'Mensagem nao informada'){
     echo "Estamos aqui: $nome - $categoria - $assunto - $mensagem";
 });
+*/
+
+//tratando parametros de rotas com expressoes regulares
+Route::get('contacto/{nome}/{categoria}',
+function(
+    string $nome = 'Desconhecido',
+    int $categoria_id = 1,
+    ) {
+    echo "Estamos aqui: $nome - $categoria_id";
+    }
+)->where('categoria_id', '[0-9]+')->where('nome', '[A-Za-z]+');
