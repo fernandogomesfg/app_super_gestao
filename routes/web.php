@@ -27,18 +27,16 @@ Route::get('/contacto', function () {
 */
 
 Route::get('/',[\App\Http\Controllers\PrincipalController::class, 'principal']);
-
 Route::get('/sobre',[\App\Http\Controllers\SobreNosController::class, 'sobreNos']);
-
 Route::get('/contacto',[\App\Http\Controllers\ContactoController::class, 'contacto']);
-
 Route::get('/login', function(){ return 'Login';});
 
-Route::get('/clientes', function(){ return 'Clientes';});
+Route::prefix('/app')->group(function() {
+    Route::get('/clientes', function(){ return 'Clientes';});
+    Route::get('/fornecedores', function(){ return 'Fornecedores';});
+    Route::get('/produtos', function(){ return 'Produtos';});
+});
 
-Route::get('/fornecedores', function(){ return 'Fornecedores';});
-
-Route::get('/produtos', function(){ return 'Produtos';});
 
 
 
