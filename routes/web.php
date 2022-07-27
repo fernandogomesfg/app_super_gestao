@@ -32,6 +32,16 @@ Route::get('/sobre',[\App\Http\Controllers\SobreNosController::class, 'sobreNos'
 
 Route::get('/contacto',[\App\Http\Controllers\ContactoController::class, 'contacto']);
 
+Route::get('/login', function(){ return 'Login';});
+
+Route::get('/clientes', function(){ return 'Clientes';});
+
+Route::get('/fornecedores', function(){ return 'Fornecedores';});
+
+Route::get('/produtos', function(){ return 'Produtos';});
+
+
+
 //envio de parametros nas rotas
 /*
 Route::get('contacto/{nome}/{categoria}/{assunto}/{mensagem?}', function(string $nome, string $categoria, string $assunto, string $mensagem = 'Mensagem nao informada'){
