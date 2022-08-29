@@ -47,6 +47,12 @@ Route::get('/rota2', function() {
 })->name('site.rota2');
 
 
+// Rota de contingência (fallback)
+Route::fallback(function() {
+    echo 'A rota acessada nao existe. Clique <a href="'.route('site.index').'"> aqui </a> para voltar!';
+});
+
+
 //Route::redirect('/rota2', '/rota1');
 
 
